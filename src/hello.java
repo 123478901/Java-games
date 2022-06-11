@@ -10,5 +10,8 @@ public class hello {
     }
   /*   public static void free(String[] args) {
         System.out.println("I am finally free!!!");
-    }*/
+    }
+    
+    well I am just testing how to send code from vs to github quiker*/
+
 }
