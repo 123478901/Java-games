@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch kitten",
+            "request": "launch",
+            "mainClass": "kitten",
+            "projectName": "first program_9432870e"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
