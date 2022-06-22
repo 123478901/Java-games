@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Polo",
+            "request": "launch",
+            "mainClass": "Polo",
+            "projectName": "first program_9432870e"
+        },
+        {
+            "type": "java",
             "name": "Launch kitten",
             "request": "launch",
             "mainClass": "kitten",
