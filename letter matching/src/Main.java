@@ -6,6 +6,7 @@ import java.util.Scanner;
     public static String [][] board = new String [4][4];
     public static String [][] cards = new String [4][4];
     public static Scanner scanner = new Scanner(System.in);
+ 
 
     public static void printBoard() {
         for (int i = 0; i < board.length; i++) {
@@ -53,12 +54,17 @@ import java.util.Scanner;
 
 
    public static void checkInput(String[][] cards) {
+      int row1 = scanner.nextInt();
+      int row2 = scanner.nextInt();
+      int column1 = scanner.nextInt();
+      int column2 = scanner.nextInt();
+      
+      
       while (true) {
+         System.out.println("Game over!!");
          if (!gameOver()) {
             System.out.println("Row: (1-4)");
-            int row1 = scanner.nextInt();
-            System.out.println("Column (1-4)");
-            int column1 = scanner.nextInt();
+            System.out.println("Column (1-4)");}
 
             if (!board[row1-1][column1-1].equals("_")) {
                System.out.println("Already Entered!");
@@ -66,17 +72,16 @@ import java.util.Scanner;
 
                printBoard();
                continue;
-               
             }
-         } else {
+            
+          else {
              board[row1-1][column1-1] = " " + cards[row1-1][column1-1] + " " ;
             printBoard();
-         }
+         
 
          System.out.println("Row: (1-4)");
-         int row1 = scanner.nextInt();
          System.out.println("Column (1-4)");
-         int column1 = scanner.nextInt();
+         }
 
          if (!board[row2-1][column2-1].equals("_")) {
             System.out.println("Already Entered!");
@@ -87,26 +92,22 @@ import java.util.Scanner;
             continue;
 
       }else {
-         board[row2-1][column2-1] = " " + cards[row2-1][column2-1] + " " ;
+         board[row2-1][column2-1] = " " + cards[row2-1][column2-1] + " " ;}
 
          if(board[row1-1][column1-1].equals(board[row2-1][column2-1])){
             printBoard();
             System.out.println("Correct!!!");
+            break;
          }else {
             printBoard();
             System.out.println("False!!");
             board[row1-1][column1-1] = " _ ";
             board[row2-1][column2-1] = " _ ";
             printBoard();
-         }
+         }}
       }
-
-
-   }else{
-      System.out.println("Game over!!");
-      break;
-   }
-   }
+      
+   
 
 
  public static boolean gameOver() {
@@ -139,10 +140,6 @@ import java.util.Scanner;
       checkInput(cards);
       break;
    }
-   }else{
-      System.out.println("Invalid character");
-      continue;
    }
 }
-
 }
